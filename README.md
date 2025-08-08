@@ -23,3 +23,6 @@ source venv/bin/activate
 #Run the development server
 
 python manage.py runserver
+
+
+before pushing anything setup .gitignore file to ignore venv
