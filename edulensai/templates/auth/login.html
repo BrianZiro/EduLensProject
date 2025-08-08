@@ -6,7 +6,21 @@
     <title>login</title>
 </head>
 <body>
-    <h1>login!!</h1>
+    <div class="form-container">
+    <form method="POST" autocomplete="off" class="login-form">
+      {% csrf_token %}
+
+      <h2>Login</h2>
+
+      <label for="id_username">Username</label>
+      {{ loginform.username }}
+
+      <label for="id_password">Password</label>
+      {{ loginform.password }}
+
+      <input type="submit" value="Login">
+    </form>
+  </div>
     
 </body>
 </html>
