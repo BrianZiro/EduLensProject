@@ -13,6 +13,6 @@ class CreateUserForm(UserCreationForm):
 
 class LoginForm(AuthenticationForm):
 
-    username = forms.CharField(TextInput())
-    password = forms.CharField(PasswordInput())
+    username = forms.CharField(widget=TextInput())
+    password = forms.CharField(widget=PasswordInput())
 
