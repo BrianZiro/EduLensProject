@@ -8,11 +8,11 @@ EduLens AI is an AI-powered platform that tracks and analyzes educational perfor
 git clone https://github.com/username/project-name.git
 cd project-name
 
-###Create and activate a virtual environment
+# Create and activate a virtual environment
 
 python -m venv venv #creating a virtual environment
 
-##activating
+#activating
 
 # Windows (Git Bash)
 source venv/Scripts/activate
@@ -20,7 +20,7 @@ source venv/Scripts/activate
 # Mac/Linux
 source venv/bin/activate
 
-#Run the development server
+# Run the development server
 
 python manage.py runserver
 
