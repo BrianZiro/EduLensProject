@@ -1,12 +1,113 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduLens AI Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="{% static 'edulens.css' %}">
+  <script src="{% static 'edulens.js' %}"></script>
+
 </head>
 <body>
-    <h1>finally you landed into dashboard!!</h1>
-    
+  {% if messages %}
+  {% for message in messages %}
+    <div class="alert">{{ message }}</div>
+  {% endfor %}
+{% endif %}
+  <!-- Header Section -->
+  <header class="header">
+    <h1>EduLens AI</h1>
+    <p>Predicting Dropout Risk in Rural Schools</p>
+  </header>
+
+  <!-- Sidebar Section -->
+<aside class="sidebar">
+<ul>
+  <li><a href="#">Home</a></li>
+  <li><a href="#" onclick="showPage('profilesPage')">Student Profiles</a></li>
+  <li><a href="#" onclick="showPage('alertsPage')">Alerts</a></li>
+  <li><a href="#" onclick="showPage('settingsPage')">Settings</a></li>
+  <li><a href="{% url 'log-out' %}" >logout</a></li>
+  
+</ul>
+  </aside>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <section class="form-section">
+      <h2>Enter Student Data</h2>
+      <form id="studentForm">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" required>
+        
+        <label for="attendance">Attendance (%):</label>
+        <input type="number" id="attendance" required>
+        
+        <label for="phone">Parent/Guardian Phone Number:</label>
+        <input type="tel" id="phone" required placeholder="+2547XXXXXXXX"/>
+
+        <label for="testScore">Test Score:</label>
+        <input type="number" id="testScore" required>
+        
+        <label for="discipline">Discipline Count:</label>
+        <input type="number" id="discipline" required>
+        
+        <label for="parentalInvolvement">Parental Involvement (1–5):</label>
+        <input type="number" id="parentalInvolvement" min="1" max="5" required>
+        
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- Student Profiles Section -->
+<section 
+id="profilesPage" class="page-section">
+</section>
+
+<!-- Alerts Section -->
+<section 
+id="alertsPage" class="page-section" style="display: none;">
+</section>
+
+<!-- Settings Section -->
+<section 
+id="settingsPage" class="page-section" style="display: none;">
+</section>
+
+
+    <!-- Risk Cards Section -->
+    <section class="risk-cards">
+      <h2>Student Risk Profiles</h2>
+      <div id="studentCards">
+        <!-- Cards will be populated here by JavaScript -->
+      </div>
+    </section>
+</section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>EduLens AI – Empowering Education with Artificial Intelligence</p>
+  </footer>
+
+  <script src="edulens.js"></script>
+  <script>
+    function showPage(pageId) {
+  const pages = ['profilesPage', 'alertsPage', 'settingsPage'];
+
+  pages.forEach(id => {
+    const page = document.getElementById(id);
+    if (page) {
+      page.style.display = (id === pageId) ? 'block' : 'none';
+    }
+  });
+}
+
+  </script>
 </body>
 </html>
