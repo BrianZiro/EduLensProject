@@ -6,7 +6,32 @@
     <title>register</title>
 </head>
 <body>
-    <h1>register!!</h1>
+   <h1>Register!!</h1>
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+
+    <label for="id_username">Username</label>
+    {{ registrationform.username }}
+
+    <label for="id_email">Email</label>
+    {{ registrationform.email }}
+
+    <label for="id_password1">Password</label>
+    {{ registrationform.password1 }}
+
+    <label for="id_password2">Confirm Password</label>
+    {{ registrationform.password2 }}
+
+    <label for="id_first_name">Firstname</label>
+    {{ registrationform.first_name }}
+
+    <label for="id_last_name">Lastname</label>
+    {{ registrationform.last_name }}
+
+    <input type="submit" value="Register">
+</form>
+ 
+
     
 </body>
 </html>
