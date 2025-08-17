@@ -6,6 +6,7 @@ EduLens AI is an AI-powered platform that tracks and analyzes educational perfor
 ## 1. Clone the repository
 
 git clone https://github.com/username/project-name.git
+
 cd project-name
 
 ## 2. Create Your Own Branch
@@ -22,40 +23,47 @@ git checkout -b frontend-dev
 
 ## 3.Create and activate a virtual environment
 
-###creating
+### creating
+
 python -m venv venv 
 
-###activating
-####Windows (Git Bash)
+### activating
+
+#### Windows (Git Bash)
+
 source venv/Scripts/activate
 
-####Mac/Linux
+#### Mac/Linux
+
 source venv/bin/activate
 
 ## 4. Work on Your Code
 
 Make your changes (e.g., Django models, templates, etc.).
 
-####Database migrations
+#### Database migrations
 
 Since this is Django, you could add:
 
 python manage.py makemigrations
+
 python manage.py migrate
 
 before running the server, so first-time setup is smooth.
 
 Run and test locally before committing.
 
-####Run the development server
+#### Run the development server
 
 python manage.py runserver
 
 
-###N/B: before pushing anything setup .gitignore file to ignore venv(i have already done that for you)
+### N/B: before pushing anything setup .gitignore file to ignore venv(i have already done that for you)
 
 ## 5. Commit Your Work
+
 git add .
+
 git commit -m "styled frontend"
 
 -the above is an example
@@ -64,35 +72,44 @@ git commit -m "styled frontend"
 
 git push origin your-branch-name
 
-##7. Create a Pull Request (PR)
+## 7. Create a Pull Request (PR)
 
 -Go to GitHub repo in the browser.
+
 -GitHub will detect your branch and suggest "Compare & pull request".
+
 -Write a short description of what you did.
+
 -Submit the PR for the project owner/reviewers to check.
 
 ## 8. Keep Your Local Repo Updated
 
 Always pull latest changes from main before starting new work:
 
-####a. Make sure you’re on your branch
+#### a. Make sure you’re on your branch
+
 git checkout your-branch-name
 
-####b. Update your local main
+#### b. Update your local main
+
 Switch to main and pull the latest changes:
 
 git checkout main
+
 git pull origin main
 
-####c. Go back to your branch
+#### c. Go back to your branch
+
 git checkout your-branch-name
 
-####d. Merge 
+#### d. Merge 
+
 -Merge main into your branch (simpler, creates a merge commit):
 
 git merge main
 
-####e. Push updated branch to GitHub
+#### e. Push updated branch to GitHub
+
 git push origin your-branch-name
 
 
