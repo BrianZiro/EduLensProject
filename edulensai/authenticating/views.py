@@ -5,6 +5,10 @@ from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 
+
+
+
+
 def homepage(request):
 
     return render(request,'auth/index.html')
@@ -46,3 +50,4 @@ def logout(request):
 @login_required(login_url='log-in')
 def dashboard(request):
     return render(request,'auth/dashboard.html')
+
