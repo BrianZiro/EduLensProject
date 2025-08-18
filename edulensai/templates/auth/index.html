@@ -1,13 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <link rel="stylesheet" href="{% static 'auth/index.css' %}">
+    <link rel="icon" href="{% static 'auth/images/EdulensIcon.jpg' %}" type="image/jpeg">
+
 </head>
 <body>
-    <a href="{% url 'register' %}" >signup</a>
-    <a href="{% url 'log-in' %}" >login</a> 
-    
+    <div class="container">
+        <h1>Welcome to EduLens</h1>
+        <p>Your AI-powered education companion</p>
+        
+        <div class="buttons">
+            <a href="{% url 'register' %}" class="btn signup">Sign Up</a>
+            <a href="{% url 'log-in' %}" class="btn login">Login</a>
+        </div>
+    </div>
 </body>
 </html>
