@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+/* navbar section*/
+.nav-section {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(pictures/room2.webp);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+.navbar {
+    background-color: rgb(83, 82, 82);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo img {
+    width: 40px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #5660eb;
+    display: block;
+    margin: auto;
+    transition: 3s;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+.log-info {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 15px;
+    position: relative;
+    border: 1px solid #16c1d8;
+    border-radius: 40px;
+
+}
+
+.log-info:hover {
+    background-color: rgb(54, 61, 63);
+    color: #5660eb;
+
+}
+
+.log-info a::after {
+    content: '';
+    width: 0%;
+    height: 4px;
+    background: #286ef0;
+    display: block;
+    margin: auto;
+    transition: 1s;
+}
+
+.log-info a:hover::after {
+    width: 100%;
+}
+
+nav .bi {
+    display: none;
+}
+
+.text-box {
+    width: 90%;
+    color: wheat;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    text-align: center;
+}
+
+.hero-btn {
+    color: cornflowerblue;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid wheat;
+    border-radius: 50px;
+    font-size: 13px;
+    padding: 12px 34px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    border: 1px solid #d8eef5;
+    background: #83f0e7;
+    transition: 1s;
+
+}
+
+.text-box h1 {
+    font-size: 62px;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+
+
+
+/* loginhtml / sign up html*/
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 70px;
+    padding: 3px;
+
+}
+
+.login-container {
+    background: #858688;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(15, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 100px;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.login-container h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.login-form input {
+    width: 90%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6e76e6;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #222fe4;
+}
+
+
+/* media */
+@media(max-width: 700px) {
+    .text-box h1 {
+        font-size: 15px;
+    }
+
+    .nav-links li {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        background: #727070;
+        height: 94vh;
+        width: 100px;
+        top: 0;
+        right: -20px;
+        text-align: left;
+        z-index: 2;
+        padding: 15px;
+        transition: 1s;
+    }
+
+    .log-info {
+        display: block;
+    }
+
+    nav .bi {
+        display: block;
+        color: #fff;
+        margin: 10px;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+}
+
+/* about section */
+
+/* contact container */
+.contact-form {
+    padding: 30px;
+    margin: 70px;
+    background-color: #fcf8f8;
+    border: 1px solid #f7e7e7;
+    border-radius: 20px;
+}
+
+/* footer*/
+.footer {
+    background-color: rgb(241, 238, 230);
+    color: black;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo {
+    float: left;
+    width: 90px;
+    padding-left: 15px;
+    padding-top: 17px;
+    padding-right: 30px;
+}
+
+.footer p {
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.footer h6 {
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+}
+
+.platforms img {
+    width: 25px;
+}
