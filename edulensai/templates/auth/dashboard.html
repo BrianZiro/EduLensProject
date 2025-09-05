@@ -14,24 +14,33 @@
 
 </head>
 <body>
-  {% if messages %}
-  {% for message in messages %}
-    <div class="alert">{{ message }}</div>
-  {% endfor %}
-{% endif %}
-  <!-- Header Section -->
-  <header class="header">
+ 
+<!-- Header Section -->
+<header class="header">
+  <div class="header-left">
     <h1>EduLens AI</h1>
     <p>Predicting Dropout Risk in Rural Schools</p>
-  </header>
+  </div>
+
+  <div class="header-right">
+    <!-- Profile Image -->
+    <img src="{{ user.profile.image }}" alt="Profile Picture" class="profile-img">
+    
+    <!-- Username -->
+    <span class="username">{{ user.username }}</span>
+  </div>
+</header>
+
+
 
   <!-- Sidebar Section -->
 <aside class="sidebar">
 <ul>
   <li><a href="#">Home</a></li>
-  <li><a href="#" onclick="showPage('profilesPage')">Student Profiles</a></li>
+  
   <li><a href="#" onclick="showPage('alertsPage')">Alerts</a></li>
   <li><a href="#" onclick="showPage('settingsPage')">Settings</a></li>
+  <li><a href="{% url 'profile' %}" onclick="showPage('profilesPage')">Student Profiles</a></li>
   <li><a href="{% url 'log-out' %}" >logout</a></li>
   
 </ul>
