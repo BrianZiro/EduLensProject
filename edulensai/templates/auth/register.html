@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="{% static 'auth/register.css' %}">
+    <link rel="icon" href="{% static 'auth/images/EdulensIcon.jpg' %}"  type="image/jpeg">
+</head>
+<body>
+   <div class="container">
+        <div class="header">
+            <h1>Create a new Account</h1>
+        </div>
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+
+    <label for="id_username">Username</label>
+    {{ registrationform.username }}
+
+    <label for="id_email">Email</label>
+    {{ registrationform.email }}
+
+    <label for="id_password1">Password</label>
+    {{ registrationform.password1 }}
+
+    <label for="id_password2">Confirm Password</label>
+    {{ registrationform.password2 }}
+
+    <label for="id_first_name">Firstname</label>
+    {{ registrationform.first_name }}
+
+    <label for="id_last_name">Lastname</label>
+    {{ registrationform.last_name }}
+
+    <div class="checkbox-group">
+                <input type="checkbox" id="remember_me" name="remember_me">
+                <label for="remember_me" class="checkbox-label">Remember Me</label>
+    </div>
+
+    <input type="submit" value="Register">
+</form>
+ 
+<div class="alt-link">
+    <p>Already have an account? 
+       <a href="{% url 'log-in' %}">Login here</a>
+    </p>
+</div>
+
+
+    
+</body>
+</html>

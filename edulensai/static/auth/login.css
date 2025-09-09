@@ -1,0 +1,120 @@
+/* Page background and font setup */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f2f5; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Container for the form card */
+.form-container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+/* Form heading */
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Labels above inputs */
+.login-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Django renders inputs inside {{ loginform.username }} and {{ loginform.password }} 
+   So we target them by input tag inside .login-form */
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Highlight input when typing */
+.login-form input:focus {
+    border-color: #4CAF50; /* green border on focus */
+}
+
+/* Login button styles */
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #4CAF50; /* green background */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.login-form button:hover {
+    background-color: #45a049; /* darker green on hover */
+}
+
+/* Press effect for button */
+.login-form button:active {
+    transform: scale(0.98);
+}
+
+/* Link at the bottom */
+.alt-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.alt-link a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.alt-link a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    display: block;          
+    width: 50%;              
+    margin: 20px auto;       
+    padding: 10px  20px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;     
+}
+
+.login-btn:hover {
+    background-color: #45a049;
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+

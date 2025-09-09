@@ -1,0 +1,203 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F5F5F5;
+  color: #333;
+}
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+ align-items: center;
+   background: #2c3e50; /* Dark blue background */
+ padding: 0 30px; /* Adjusted padding */
+ color: white;
+  height: 80px; /* Set a fixed height for the header */
+  position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+  z-index: 100;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+  }
+  
+  .header-left {
+   display: flex;
+   flex-direction: column; /* Stack h1 and p vertically */
+   justify-content: center;
+  height: 100%; /* Take full height of header */
+  }
+  
+  .header-left h1 {
+   margin: 0;
+  font-size: 1.8rem; /* Slightly larger title */
+  font-weight: 600;
+  }
+  
+  .header-left p {
+   margin: 0;
+  font-size: 0.9rem;
+   color: #b0c7d4; /* Lighter color for description */
+  }
+  
+  .header-right {
+   display: flex;
+   align-items: center;
+  gap: 10px; /* Space between elements in header-right */
+   position: relative; /* For dropdown positioning */
+   padding-right: 15px; /* Add some padding to the right */
+  }
+  
+  .profile-img {
+   width: 45px; /* Size of the profile avatar */
+  height: 45px;
+   border-radius: 50%; /* Makes it circular */
+   object-fit: cover; /* Ensures image covers the area */
+   border: 2px solid #5cb85c; /* Green border as in your drawing */
+   box-shadow: 0 0 0 4px rgba(92, 184, 92, 0.4); /* Green glow effect */
+  }
+  
+  .username {
+   font-weight: 600; /* Bold username */
+   font-size: 1rem;
+   color: #ffffff; /* White username text */
+   text-transform: capitalize; /* Capitalize the first letter of username */
+  }
+  
+  
+  
+
+
+
+
+
+/* Auth Links (when logged out) */
+.auth-links a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 15px;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.auth-links a:hover {
+  background: #fff;
+  color: #1976d2;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: white;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  color: #003366;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Main Content Styling */
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+.form-section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.form-section input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-section button {
+  background-color: #009688;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-section button:hover {
+  background-color: #00796b;
+}
+
+/* Risk Card Styling */
+.risk-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #e6f2ff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  color: #003366;
+}
+
+.card .risk-level {
+  font-weight: bold;
+}
+
+.card .button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #FFCC00;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer Styling */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #003366;
+  color: white;
+}
+
