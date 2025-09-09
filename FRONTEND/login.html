@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body><header class="navbar">
+        <div class="logo-info">
+            <!--logo -->
+           <img src="pics/EDULENSE LOGO (1).png" class="logo">
+            <div class="title">
+                <h1>EduLense AI</h1>
+                <p class="tag">AI-guided insights for rural schools</p>
+            </div>
+        </div>
+
+        <nav class="nav" id="Nav">
+             <i class="bi bi-x-circle" onclick="hideMenu()"></i>
+
+            <a href="#home" class="nav-link" data-target="home">Home</a>
+            <a href="#profile" class="nav-link" data-target="profile">Student Profile</a>
+            <a href="#alerts" class="nav-link" data-target="alerts">Alerts</a>
+            <a href="#report" class="nav-link" data-target="report">Report</a>
+            <a href="#dashboard" class="nav-link" data-target="dashboard">Dashboard</a>
+            <a href="#settings" class="nav-link" data-target="settings">Settings</a>
+
+            <div class="auth">
+                <a href="#" class="btn-empty">Login</a>
+                <a href="#" class="btn-ghost">Sign Up</a>
+            </div>
+           
+        </nav>
+          <i class="bi bi-list" onclick="showMenu()"></i>
+    </header>
+    <div class="login-container">
+
+        <h2>Log in</h2>
+
+        <!-- login form -->
+        <form class="login-form" id="loginForm" action="">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" name="password" required>
+
+            <button type="submit">Log in</button>
+        </form>
+        <p id="errorMessages" style="color: red; font-size: 14px; margin-top: 10px;"></p>
+
+        <h4>Don't have an account? <a href="signin.html">Sign up</a></h4>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

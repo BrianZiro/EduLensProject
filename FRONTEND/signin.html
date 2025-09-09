@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-info">
+            <!--logo -->
+           <img src="pics/EDULENSE LOGO (1).png" class="logo">
+            <div class="title">
+                <h1>EduLense AI</h1>
+                <p class="tag">AI-guided insights for rural schools</p>
+            </div>
+        </div>
+
+        <nav class="nav" id="Nav">
+             <i class="bi bi-x-circle" onclick="hideMenu()"></i>
+
+            <a href="#home" class="nav-link" data-target="home">Home</a>
+            <a href="#profile" class="nav-link" data-target="profile">Student Profile</a>
+            <a href="#alerts" class="nav-link" data-target="alerts">Alerts</a>
+            <a href="#report" class="nav-link" data-target="report">Report</a>
+            <a href="#dashboard" class="nav-link" data-target="dashboard">Dashboard</a>
+            <a href="#settings" class="nav-link" data-target="settings">Settings</a>
+
+            <div class="auth">
+                <a href="login.html" class="btn-empty">Login</a>
+                <a href="signin.html" class="btn-ghost">Sign Up</a>
+            </div>
+           
+        </nav>
+          <i class="bi bi-list" onclick="showMenu()"></i>
+    </header>
+
+    <div class="main-content">
+      <div class="login-container">
+
+        <h2>Sign Up</h2>
+
+        <!-- sign up form -->
+        <form class="login-form" action="">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter username" name="username" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter email" name="email" required>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" name="password" required>
+
+          <label for="confirmpassword">Confirm password</label>
+          <input type="password" id="confirmpassword" placeholder="Repeat your password" name="confirmpassword"
+            required>
+
+          <button type="submit">sigh up</button>
+        </form>
+        <h4>Have an account? <a href="login.html">Login</a></h4>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
