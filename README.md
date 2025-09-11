@@ -114,3 +114,13 @@ Run and test locally before committing.
 
 
 ✅ Now your branch has all the latest changes from main.
+
+##environment variable setup
+  -create a file called **.env** and include the following:
+
+      DATABASENAME=edulensdb
+      DATABASEUSER=root
+      DATABASEPASSWORD=" your database password "
+      DATABASEHOST=localhost
+      DATABASEPORT=3306
+      
