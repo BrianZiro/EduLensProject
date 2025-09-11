@@ -10,4 +10,6 @@ def create_profile(sender,instance,created,**kwargs):
 
 @receiver(post_save,sender=User)
 def save_profile(sender,instance,**kwargs):
-    instance.profile.save()
+    # Ensure the profile exists for users that predate the signal or were created via fixtures
+    profile, _created = Profile.objects.get_or_create(user=instance)
+    profile.save()
