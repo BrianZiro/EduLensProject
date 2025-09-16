@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authenticating',
-    # 'users',
+    'authenticating.apps.AuthenticatingConfig',
+  
 ]
 
 MIDDLEWARE = [
