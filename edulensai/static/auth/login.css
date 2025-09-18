@@ -49,8 +49,9 @@ body {
 
 /* Highlight input when typing */
 .login-form input:focus {
-    border-color: #4CAF50; /* green border on focus */
+    border-color: #17123d; /* green border on focus */
 }
+
 
 /* Login button styles */
 .login-form button {
