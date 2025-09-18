@@ -464,4 +464,24 @@
         }
     };
 
+    function toggleDropdown() {
+      const dropdown = document.getElementById("profileDropdown");
+      dropdown.style.display =
+        dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    function closeDropdown() {
+      document.getElementById("profileDropdown").style.display = "none";
+    }
+
+    // Optional: close dropdown if clicked outside
+    document.addEventListener("click", function (event) {
+      const dropdown = document.getElementById("profileDropdown");
+      const trigger = document.querySelector(".profile-trigger");
+
+      if (!trigger.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+
 })();

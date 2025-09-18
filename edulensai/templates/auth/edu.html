@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
 
@@ -5,7 +7,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>EduLense AI — Frontend Prototype</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="{% static 'auth/images/EdulensIcon.jpg' %}" type="image/jpeg">
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <link rel="stylesheet" href="{% static 'auth/index.css' %}">
 </head>
 
 <body>
@@ -38,8 +42,8 @@
             <a href="#settings" class="nav-link" data-target="settings">Settings</a>
 
             <div class="auth">
-                <a href="login.html" class="btn-empty">Login</a>
-                <a href="signup.html" class="btn-ghost">Sign Up</a>
+                <a href="{% url 'log-out' %}" class="btn-empty">logout</a>
+                <a href="{% url 'profile' %}" class="btn-empty">update profile</a>  
             </div>
         </nav>
     </header>
@@ -130,6 +134,7 @@
                 </div>
 
                 <div class="form-actions">
+                    
                     <button type="submit" class="btn">Save Profile</button>
                     <button type="button" id="load-sample" class="btn-ghost">Load Sample</button>
                     <button type="button" id="clear-profile" class="btn-empty">Clear</button>
@@ -251,7 +256,7 @@
         <small>EduLense AI — prototype • 2025 • built for rural school insights</small>
     </footer>
 
-    <script src="index.js" defer></script>
+    <script src="{% static 'auth/index.js' %}" defer></script>
 </body>
 
 </html>
