@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EduLense AI — Frontend Prototype</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <!-- Inline SVG logo -->
+            <svg viewBox="0 0 100 100" class="logo" aria-hidden="true">
+                <defs>
+                    <linearGradient id="g" x1="0" x2="1">
+                        <stop offset="0" stop-color="#0b3d91" />
+                        <stop offset="1" stop-color="#1b6bd8" />
+                    </linearGradient>
+                </defs>
+                <rect rx="12" width="100" height="100" fill="url(#g)" />
+                <path d="M30 65 L50 30 L70 65 Z" fill="white" opacity="0.95" />
+                <circle cx="50" cy="45" r="6" fill="#0b3d91" />
+            </svg>
+            <div class="title">
+                <h1>EduLense AI</h1>
+                <p class="tag">AI-guided insights for rural schools</p>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <a href="#home" class="nav-link" data-target="home">Home</a>
+            <a href="#profile" class="nav-link" data-target="profile">Student Profile</a>
+            <a href="#alerts" class="nav-link" data-target="alerts">Alerts</a>
+            <a href="#report" class="nav-link" data-target="report">Report</a>
+            <a href="#dashboard" class="nav-link" data-target="dashboard">Dashboard</a>
+            <a href="#settings" class="nav-link" data-target="settings">Settings</a>
+
+            <div class="auth">
+                <a href="login.html" class="btn-empty">Login</a>
+                <a href="signup.html" class="btn-ghost">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- HOME -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div>
+                    <h2>See. Understand. Improve.</h2>
+                    <p>
+                        EduLense AI tracks performance and attendance, analyzes risk factors for dropouts,
+                        and surfaces action-ready insights for educators, parents and policymakers.
+                    </p>
+                    <div class="cta-row">
+                        <button id="go-profile" class="btn">Create Student Profile</button>
+                        <button id="go-dashboard" class="btn-outline">View Dashboard</button>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <h3>Quick snapshot</h3>
+                    <ul class="snapshot">
+                        <li><strong id="snap-students">0</strong> students tracked</li>
+                        <li><strong id="snap-at-risk">0</strong> at-risk</li>
+                        <li><strong id="snap-reports">0</strong> reports generated</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFILE -->
+        <section id="profile" class="page">
+            <h2>Student Profile</h2>
+            <form id="profile-form" class="card">
+                <div class="form-grid">
+                    <label>
+                        Student name
+                        <input type="text" id="studentName" required placeholder="e.g., Grace Akoth" />
+                    </label>
+                    <label>
+                        Parent / Guardian name(s)
+                        <input type="text" id="parentNames" placeholder="e.g., John & Mary Akoth" />
+                    </label>
+                    <label>
+                        Attendants this month
+                        <div class="attendance-control">
+                            <button type="button" class="att-btn" id="att-down"
+                                aria-label="decrease attendance">−</button>
+                            <input type="number" id="attendance" min="0" max="31" value="20" />
+                            <button type="button" class="att-btn" id="att-up"
+                                aria-label="increase attendance">+</button>
+                        </div>
+                        <small class="muted">Use the buttons to adjust monthly attendance (0–31)</small>
+                    </label>
+
+                    <label>
+                        Discipline incidents this month
+                        <input type="number" id="discipline" min="0" value="0" />
+                    </label>
+
+                    <label>
+                        Parent / guardian involvement
+                        <select id="parentInvolvement">
+                            <option value="high">High</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </label>
+
+                    <div class="form-full">
+                        <label>Subjects & Scores (0–100) — add subjects you need</label>
+                        <div id="subjects-list" class="subjects-grid">
+                            <div class="subject-row">
+                                <input class="sub-name" placeholder="Mathematics" />
+                                <input class="sub-score" type="number" min="0" max="100" value="60" />
+                                <button type="button" class="sub-remove">✕</button>
+                            </div>
+                            <div class="subject-row">
+                                <input class="sub-name" placeholder="English" />
+                                <input class="sub-score" type="number" min="0" max="100" value="55" />
+                                <button type="button" class="sub-remove">✕</button>
+                            </div>
+                        </div>
+                        <div class="subject-actions">
+                            <button id="add-subject" type="button" class="btn-small">+ Add subject</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn">Save Profile</button>
+                    <button type="button" id="load-sample" class="btn-ghost">Load Sample</button>
+                    <button type="button" id="clear-profile" class="btn-empty">Clear</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ALERTS -->
+        <section id="alerts" class="page">
+            <h2>Alerts</h2>
+            <div id="alerts-area" class="card">
+                <p>Select a saved student profile (or save one) to see alerts.</p>
+                <div id="alerts-output" class="alert-list"></div>
+            </div>
+        </section>
+
+        <!-- REPORT -->
+        <section id="report" class="page">
+            <h2>Report Card</h2>
+            <div class="card" id="report-card">
+                <div id="report-header" class="report-header">
+                    <div>
+                        <h3 id="r-name">—</h3>
+                        <p id="r-parents" class="muted">Parents: —</p>
+                    </div>
+                    <div class="report-summary">
+                        <p>Attendance: <strong id="r-attendance">—</strong>/31</p>
+                        <p>Average: <strong id="r-average">—</strong></p>
+                        <p>Dropout risk: <strong id="r-risk">—</strong></p>
+                    </div>
+                </div>
+
+                <table class="report-table" id="report-table" aria-live="polite">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total</td>
+                            <td id="r-total">0</td>
+                        </tr>
+                        <tr>
+                            <td>Average</td>
+                            <td id="r-avg-2">0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="report-actions">
+                    <button id="generate-report" class="btn">Generate Report</button>
+                    <button id="download-report" class="btn-ghost">Download (JSON)</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page">
+            <h2>Dashboard</h2>
+            <div class="grid-3">
+                <div class="card stat-card">
+                    <h4>Total students</h4>
+                    <p class="stat" id="dash-students">0</p>
+                </div>
+                <div class="card stat-card">
+                    <h4>At risk students</h4>
+                    <p class="stat" id="dash-risk">0</p>
+                </div>
+                <div class="card stat-card">
+                    <h4>Reports generated</h4>
+                    <p class="stat" id="dash-reports">0</p>
+                </div>
+            </div>
+
+            <div class="card chart-card">
+                <h3>Performance distribution</h3>
+                <canvas id="perfChart" width="600" height="160" aria-label="Performance chart"></canvas>
+                <p class="muted small">Simple averaged performance per student (demo).</p>
+            </div>
+        </section>
+
+        <!-- SETTINGS -->
+        <section id="settings" class="page">
+            <h2>Settings</h2>
+            <div class="card settings-card">
+                <label>
+                    Theme
+                    <select id="uiTheme">
+                        <option value="dark">Dark Blue</option>
+                        <option value="light">Light Mode</option>
+                    </select>
+                </label>
+
+                <label>
+                    Dropout thresholds
+                    <div class="thresholds">
+                        <label>Attendance (% below): <input type="number" id="th-att" min="0" max="100"
+                                value="75" />%</label>
+                        <label>Average score (
+                            <): <input type="number" id="th-score" min="0" max="100" value="50" />
+                        </label>
+                        <label>Discipline incidents (>): <input type="number" id="th-discipline" min="0"
+                                value="5" /></label>
+                    </div>
+                </label>
+
+                <div class="form-actions">
+                    <button id="save-settings" class="btn">Save Settings</button>
+                    <button id="reset-settings" class="btn-empty">Reset to default</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <small>EduLense AI — prototype • 2025 • built for rural school insights</small>
+    </footer>
+
+    <script src="index.js" defer></script>
+</body>
+
+</html>
