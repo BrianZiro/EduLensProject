@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
+=======
+{% load static %}
+
+<!doctype html>
+>>>>>>> origin/main
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>EduLense AI — Frontend Prototype</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="index.css" />
     <link
       rel="stylesheet"
@@ -11,6 +18,12 @@
     />
     <link rel="icon" href="{% static 'auth/images/EdulensIcon.jpg' %}" type="image/jpeg">
   </head>
+=======
+    <link rel="icon" href="{% static 'auth/images/EdulensIcon.jpg' %}" type="image/jpeg">
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <link rel="stylesheet" href="{% static 'auth/index.css' %}">
+</head>
+>>>>>>> origin/main
 
   <body>
     <header class="topbar">
@@ -36,6 +49,7 @@
         >
         <a href="#settings" class="nav-link" data-target="settings">Settings</a>
 
+<<<<<<< HEAD
         <!-- Profile Picture with Dropdown -->
         <div class="profile-dropdown">
           <img
@@ -51,6 +65,13 @@
         </div>
       </nav>
       <i class="bi bi-list" onclick="showMenu()"></i>
+=======
+            <div class="auth">
+                <a href="{% url 'log-out' %}" class="btn-empty">logout</a>
+                <a href="{% url 'profile' %}" class="btn-empty">update profile</a>  
+            </div>
+        </nav>
+>>>>>>> origin/main
     </header>
 
     <main class="container">
@@ -174,6 +195,7 @@
                   />
                   <button type="button" class="sub-remove">✕</button>
                 </div>
+<<<<<<< HEAD
                 <div class="subject-row">
                   <input class="sub-name" placeholder="English" />
                   <input
@@ -184,6 +206,14 @@
                     value="55"
                   />
                   <button type="button" class="sub-remove">✕</button>
+=======
+
+                <div class="form-actions">
+                    
+                    <button type="submit" class="btn">Save Profile</button>
+                    <button type="button" id="load-sample" class="btn-ghost">Load Sample</button>
+                    <button type="button" id="clear-profile" class="btn-empty">Clear</button>
+>>>>>>> origin/main
                 </div>
               </div>
               <div class="subject-actions">
@@ -353,6 +383,13 @@
       >
     </footer>
 
+<<<<<<< HEAD
     <script src="index.js" defer></script>
   </body>
 </html>
+=======
+    <script src="{% static 'auth/index.js' %}" defer></script>
+</body>
+
+</html>
+>>>>>>> origin/main
