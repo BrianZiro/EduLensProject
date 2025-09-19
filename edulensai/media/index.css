@@ -85,6 +85,81 @@ body {
     background: var(--glass);
     color: var(--white)
 }
+<<<<<<< HEAD:edulensai/templates/auth/index.css
+nav .bi {
+      display: none;
+    
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .nav {
+        position: fixed;
+        right:-200px;
+        top: 0;
+        height: 100vh;
+        width: 220px;
+        top: 0;
+        background: #333;
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+        text-align: left;
+        transition: 1s;
+        z-index: 2;
+    }
+    .nav a {
+       padding: 15px;
+       text-align: left;
+
+        
+    }
+
+    nav .bi {
+        display: block;
+        color: white;
+        margin: 3px;
+        cursor: pointer;
+
+    }
+}
+/* Profile Picture */
+.profile-pic {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;  
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+/* Dropdown Menu */
+.profile-dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: rgb(10, 15, 43);
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 1000;
+}
+.dropdown-menu a {
+  padding: 10px;
+  text-decoration: none;
+  color: wheat;
+  display: block;
+}
+.dropdown-menu a:hover {
+  background: rgb(46, 75, 240);
+}
+
+=======
+>>>>>>> main:edulensai/media/index.css
 
 .auth {
     display: flex;
