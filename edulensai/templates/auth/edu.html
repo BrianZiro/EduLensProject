@@ -1,13 +1,20 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 
 <!doctype html>
 
+=======
+{% load static %}
+
+<!doctype html>
+>>>>>>> main
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>EduLense AI — Frontend Prototype</title>
+<<<<<<< HEAD
 
 
 
@@ -24,6 +31,14 @@
 <link rel="stylesheet" href="{% static 'auth/index.css' %}">
 </head>
 
+=======
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <link rel="stylesheet" href="{% static 'auth/index.css' %}">
+    <link rel="icon" href="{% static 'auth/images/EdulensIcon.jpg' %}" type="image/jpeg">
+</head>
+
+>>>>>>> main
 <body>
     <header class="topbar">
         <div class="brand">
@@ -44,6 +59,7 @@
             <a href="#dashboard" class="nav-link" data-target="dashboard">Dashboard</a>
             <a href="#settings" class="nav-link" data-target="settings">Settings</a>
 
+<<<<<<< HEAD
 
             <!-- Profile Picture with Dropdown -->
             <div class="profile-dropdown">
@@ -51,11 +67,23 @@
                 <div class="auth" id="dropdownMenu">
                     <a href="{% url 'log-out' %}" class="btn-empty">logout</a>
                     <a href="{% url 'profile' %}" class="btn-empty">update profile</a>
+=======
+            <!-- Profile Picture with Dropdown -->
+            <div class="profile-dropdown">
+                <img src="{{ user.profile.image.url }}" alt="Profile" class="profile-pic"
+                    id="profilePic" />
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="{% url 'profile'%}">Update Profile</a>
+                    <a href="{% url 'log-out'%}">Logout</a>
+>>>>>>> main
                 </div>
             </div>
         </nav>
         <i class="bi bi-list" onclick="showMenu()"></i>
+<<<<<<< HEAD
         </nav>
+=======
+>>>>>>> main
 
     </header>
 
@@ -143,6 +171,7 @@
                                 <input class="sub-score" type="number" min="0" max="100" value="60" />
                                 <button type="button" class="sub-remove">✕</button>
                             </div>
+<<<<<<< HEAD
                             <<<<<<< HEAD <<<<<<< HEAD=======>>>>>>> main
                                 <div class="subject-row">
                                     <input class="sub-name" placeholder="English" />
@@ -166,6 +195,27 @@
                                         + Add subject
                                     </button>
                                 </div>
+=======
+
+                            <div class="subject-row">
+                                <input class="sub-name" placeholder="English" />
+                                <input class="sub-score" type="number" min="0" max="100" value="55" />
+                                <button type="button" class="sub-remove">✕</button>
+
+                                <div class="form-actions">
+
+                                    <button type="submit" class="btn">Save Profile</button>
+                                    <button type="button" id="load-sample" class="btn-ghost">Load Sample</button>
+                                    <button type="button" id="clear-profile" class="btn-empty">Clear</button>
+
+                                </div>
+                            </div>
+                            <div class="subject-actions">
+                                <button id="add-subject" type="button" class="btn-small">
+                                    + Add subject
+                                </button>
+                            </div>
+>>>>>>> main
                         </div>
                     </div>
 
@@ -303,6 +353,7 @@
     <footer class="footer">
         <small>EduLense AI — prototype • 2025 • built for rural school insights</small>
     </footer>
+<<<<<<< HEAD
     <script src="index.js" defer>
     </script>
 </body>
@@ -312,4 +363,10 @@
 <script src="{% static 'auth/index.js' %}" defer></script>
 </body>
 
+=======
+
+    <script src="{% static 'auth/index.js' %}" defer></script>
+</body>
+
+>>>>>>> main
 </html>

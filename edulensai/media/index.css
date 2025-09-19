@@ -18,55 +18,6 @@ html,
 body {
     height: 100%
 }
-/* === THEME VARIABLES === */
-/* Default Theme = Dark Mode */
-:root {
-  --bg-color: #121212;
-  --text-color: #f5f5f5;
-  --nav-bg: #1a1a2e;
-  --nav-text: #ddd;
-}
-
-/* Light Mode (only when class is applied) */
-body.light-mode {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --nav-bg: darkblue;
-  --nav-text: white;
-}
-
-/* Apply theme */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Navbar */
-.navbar {
-  background: var(--nav-bg);
-  color: var(--nav-text);
-}
-
-/* Nav links */
-.nav-links a {
-  color: var(--nav-text);
-}
-.nav-links a:hover {
-  color: grey;
-}
-
-/* Theme button */
-.theme-btn {
-  background: var(--nav-bg);
-  color: var(--nav-text);
-  padding: 8px 15px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
 
 body {
     margin: 0;
@@ -134,6 +85,7 @@ body {
     background: var(--glass);
     color: var(--white)
 }
+<<<<<<< HEAD:edulensai/templates/auth/index.css
 nav .bi {
       display: none;
     
@@ -206,12 +158,15 @@ nav .bi {
   background: rgb(46, 75, 240);
 }
 
+=======
+>>>>>>> main:edulensai/media/index.css
 
 .auth {
     display: flex;
     gap: 8px;
     align-items: center
 }
+
 
 .btn-empty {
     background: transparent;
