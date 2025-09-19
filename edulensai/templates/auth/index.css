@@ -136,9 +136,7 @@ body {
 }
 nav .bi {
       display: none;
-    font-size: 25px;
-    cursor: pointer;
-    color: white;
+    
 }
 /* Responsive */
 @media (max-width: 768px) {
