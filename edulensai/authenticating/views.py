@@ -7,12 +7,9 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 
 
-
-
-
 def homepage(request):
 
-    return render(request,'auth/index.html')
+    return render(request,'auth/homepage.html')
 def register(request):
     form = CreateUserForm()
     if request.method == 'POST':
@@ -50,7 +47,7 @@ def logout(request):
 
 @login_required(login_url='log-in')
 def dashboard(request):
-    return render(request,'auth/dashboard.html')
+    return render(request,'auth/edu.html')
 
 
 
