@@ -10,4 +10,9 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+
 
