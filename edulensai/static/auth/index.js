@@ -3,6 +3,33 @@
    - report calculation, alert generation and a small dashboard chart.
 */
 
+//javaScript for toggle menu
+
+var nav= document.getElementById ("navLinks"); 
+function showMenu(){
+    nav.style.right = "0";
+}
+function hideMenu(){ 
+    nav.style.right = "-300px";
+}
+
+// Toggle dropdown on profile pic click
+document.getElementById("profilePic").addEventListener("click", function () {
+  const dropdown = document.getElementById("dropdownMenu");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function (event) {
+  const dropdown = document.getElementById("dropdownMenu");
+  const profilePic = document.getElementById("profilePic");
+
+  if (!profilePic.contains(event.target) && !dropdown.contains(event.target)) {
+    dropdown.style.display = "none";
+  }
+});
+
+
 (() => {
     // Elements & state
     const pages = document.querySelectorAll('.page');
@@ -485,3 +512,34 @@
     });
 
 })();
+
+// === THEME TOGGLE FROM SETTINGS ===
+const themeToggle = document.getElementById("themeToggle");
+const body = document.body;
+
+// Load saved theme (default = dark)
+let savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+  body.classList.add("light-mode");
+  themeToggle.textContent = "🌙 Dark Mode";
+} else {
+  body.classList.remove("light-mode"); // default = dark
+  themeToggle.textContent = "☀️ Light Mode";
+}
+
+// Toggle theme on button click
+themeToggle.addEventListener("click", () => {
+  if (body.classList.contains("light-mode")) {
+    body.classList.remove("light-mode"); // back to dark
+    themeToggle.textContent = "☀️ Light Mode";
+    localStorage.setItem("theme", "dark");
+  } else {
+    body.classList.add("light-mode"); // switch to light
+    themeToggle.textContent = "🌙 Dark Mode";
+    localStorage.setItem("theme", "light");
+  }
+});
+
+
+
