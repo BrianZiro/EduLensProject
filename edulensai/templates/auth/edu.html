@@ -16,7 +16,7 @@
     <header class="topbar">
         <div class="brand">
             <!-- Inline SVG logo -->
-            <img src="{% static 'auth/images/EdulensIcon.jpg' %}" alt="" />
+            <img src="{{ user.profile.image}}" alt="" />
             <div class="title">
                 <h1>EduLense AI</h1>
                 <p class="tag">AI-guided insights for rural schools</p>
@@ -34,11 +34,11 @@
 
             <!-- Profile Picture with Dropdown -->
             <div class="profile-dropdown">
-                <img src="{{ user.profile.image.url }}" alt="Profile" class="profile-pic"
+                <img src="{{ user.profile.image }}" alt="Profile" class="profile-pic"
                     id="profilePic" />
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="update-profile.html">Update Profile</a>
-                    <a href="logout.html">Logout</a>
+                    <a href="{% url 'profile'%}">Update Profile</a>
+                    <a href="{% url 'log-out'%}">Logout</a>
                 </div>
             </div>
         </nav>
