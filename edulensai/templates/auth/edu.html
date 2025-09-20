@@ -35,8 +35,7 @@
 
             <!-- Profile Picture with Dropdown -->
             <div class="profile-dropdown">
-                <img src="{{ user.profile.image.url }}" alt="Profile" class="profile-pic"
-                    id="profilePic" />
+                <img src="{{ user.profile.image.url }}" alt="Profile" class="profile-pic" id="profilePic" />
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="{% url 'profile'%}">Update Profile</a>
                     <a href="{% url 'log-out'%}">Logout</a>
@@ -137,13 +136,6 @@
                                 <input class="sub-score" type="number" min="0" max="100" value="55" />
                                 <button type="button" class="sub-remove">✕</button>
 
-                                <div class="form-actions">
-
-                                    <button type="submit" class="btn">Save Profile</button>
-                                    <button type="button" id="load-sample" class="btn-ghost">Load Sample</button>
-                                    <button type="button" id="clear-profile" class="btn-empty">Clear</button>
-
-                                </div>
                             </div>
                             <div class="subject-actions">
                                 <button id="add-subject" type="button" class="btn-small">
@@ -257,31 +249,29 @@
                         <label for="themeToggle">Theme:</label>
                         <button id="themeToggle" class="theme-btn">☀️ Light Mode</button>
                     </div>
+                    <label>
+                        Dropout thresholds
+                        <div class="thresholds">
+                            <label>Attendance (% below):
+                                <input type="number" id="th-att" min="0" max="100" value="75" />%</label>
+                            <label>Average score (
+                                <): <input type="number" id="th-score" min="0" max="100" value="50" />
+                            </label>
+                            <label>Discipline incidents (>):
+                                <input type="number" id="th-discipline" min="0" value="5" /></label>
+                        </div>
+                    </label>
+                    <div class="form-actions">
+                        <button id="save-settings" class="btn">Save Settings</button>
+                        <button id="reset-settings" class="btn-empty">
+                            Reset to default
+                        </button>
+                    </div>
             </div>
 
         </section>
 
-        <label>
-            Dropout thresholds
-            <div class="thresholds">
-                <label>Attendance (% below):
-                    <input type="number" id="th-att" min="0" max="100" value="75" />%</label>
-                <label>Average score (
-                    <): <input type="number" id="th-score" min="0" max="100" value="50" />
-                </label>
-                <label>Discipline incidents (>):
-                    <input type="number" id="th-discipline" min="0" value="5" /></label>
-            </div>
-        </label>
 
-        <div class="form-actions">
-            <button id="save-settings" class="btn">Save Settings</button>
-            <button id="reset-settings" class="btn-empty">
-                Reset to default
-            </button>
-        </div>
-        </div>
-        </section>
     </main>
 
     <footer class="footer">
