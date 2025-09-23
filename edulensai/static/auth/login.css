@@ -49,15 +49,16 @@ body {
 
 /* Highlight input when typing */
 .login-form input:focus {
-    border-color: #4CAF50; /* green border on focus */
+    border-color: #17123d; /* green border on focus */
 }
+
 
 /* Login button styles */
 .login-form button {
     width: 100%;
     padding: 12px;
     margin-top: 20px;
-    background-color: #4CAF50; /* green background */
+    background-color: #1b6bd8; /* dark blue background */
     color: white;
     border: none;
     border-radius: 6px;
