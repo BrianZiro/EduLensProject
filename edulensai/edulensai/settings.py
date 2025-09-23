@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'edulensai.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv("DATABASENAME"),
-        'USER': os.getenv("DATABASEUSER"),
-        'PASSWORD': os.getenv("DATABASEPASSWORD"),
-        'HOST': os.getenv("DATABASEHOST"), 
-        'PORT': os.getenv("DATABASEPORT"),
+        'NAME': os.getenv("DATABASENAME","edulensai"),
+        'USER': os.getenv("DATABASEUSER","edulens"),
+        'PASSWORD': os.getenv("DATABASEPASSWORD","Anto@2006"),
+        'HOST': os.getenv("DATABASEHOST","127.0.0.1"), 
+        'PORT': os.getenv("DATABASEPORT","3306"),
     }
 }
 
