@@ -1,0 +1,113 @@
+/* General dark theme */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0f172a; /* dark navy like dashboard */
+  color: #e2e8f0;
+  margin: 0;
+  padding: 40px;
+}
+
+/* Profile card wrapper */
+.profile-wrapper {
+  max-width: 750px;
+  margin: auto;
+  background: #1e293b; /* card dark background */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Profile header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+}
+
+.profile-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 3px solid #00793e; /* primary green accent */
+}
+
+.profile-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #f8fafc;
+}
+
+.profile-header p {
+  margin: 5px 0 0;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* Form styling */
+.profile-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-form legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #f1f5f9;
+}
+
+.profile-form p {
+  margin-bottom: 15px;
+}
+
+.profile-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #e2e8f0;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #f1f5f9;
+}
+
+.profile-form input:focus {
+  border-color: #00793e;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 121, 62, 0.6);
+}
+
+/* Button styling */
+.form-actions {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.form-actions button {
+  background: #00793e; /* primary */
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.form-actions button:hover {
+  background: #056b36;
+  transform: translateY(-2px);
+}
