@@ -4,10 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EduLens - Home</title>
+    <link rel="stylesheet" href="{% static 'auth/homepage.css' %}">
 </head>
 <body>
-    <a href="{% url 'log-in'%}">login</a>
-    <a href="{% url 'register'%}">signup</a>
+    <div class="container">
+        <header>
+            <h1 class="logo">EduLens</h1>
+        </header>
+        
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Transform Your Learning Experience</h2>
+                    <p>AI-powered educational platform designed to enhance your learning journey</p>
+                    
+                    <div class="auth-buttons">
+                        <a href="{% url 'log-in' %}" class="btn btn-login">Login</a>
+                        <a href="{% url 'register' %}" class="btn btn-signup">Sign Up</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="glass-card">
+                        <div class="card-content">
+                            <h3>Features</h3>
+                            <ul>
+                                <li>Personalized Learning Paths</li>
+                                <li>AI-Powered Recommendations</li>
+                                <li>Progress Tracking</li>
+                                <li>Interactive Content</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 EduLens. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
