@@ -5,6 +5,7 @@ from .forms import CreateUserForm,LoginForm,UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from .ml_utils import predict_student_outcome
 
 
 def homepage(request):
@@ -75,5 +76,26 @@ def profile(request):
     }
 
     return render(request, 'auth/profile.html', context=context)
+
+
+
+def student_prediction(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        phone = request.POST.get("phone")
+        attendance = float(request.POST.get("attendance"))
+        test_score = float(request.POST.get("test_score"))
+        parental_involvement = int(request.POST.get("parental_involvement"))
+        discipline_count = int(request.POST.get("discipline_count"))
+
+        result = predict_student_outcome(attendance, test_score, parental_involvement, discipline_count)
+
+        return render(request, "dashboard.html", {
+            "name": name,
+            "phone": phone,
+            "result": result
+        })
+
+    return render(request, "dashboard.html")
    
     
