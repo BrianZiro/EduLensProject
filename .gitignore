@@ -13,3 +13,6 @@ pip-selfcheck.json
 # Ignore Python cache
 __pycache__/
 *.pyc
+# Can't push these big files
+*.pkl
+authenticating/ml_model/
