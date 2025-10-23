@@ -14,5 +14,5 @@ pip-selfcheck.json
 __pycache__/
 *.pyc
 # Can't push these big files
-*.pkl
+
 
