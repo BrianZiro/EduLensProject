@@ -574,3 +574,166 @@ footer.footer {
         display: none
     }
 }
+/* Enhanced Alert Styles */
+.alert-card {
+    background: var(--card, #1a1a1a);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.alert-card:hover {
+    transform: translateY(-2px);
+}
+
+.alert-header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.student-info h3 {
+    margin: 0;
+    color: var(--white, #ffffff);
+    font-size: 1.2em;
+}
+
+.risk-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.risk-stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+}
+
+.stat-label {
+    font-size: 0.8em;
+    color: var(--muted, #888);
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: var(--white, #ffffff);
+    font-size: 1.1em;
+}
+
+.risk-factors {
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.risk-factors h4 {
+    margin: 0 0 12px 0;
+    color: var(--white, #ffffff);
+    font-size: 1em;
+}
+
+.risk-factor {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.risk-factor.critical {
+    background: rgba(255, 68, 68, 0.1);
+    border-left: 3px solid #ff4444;
+}
+
+.risk-factor.warning {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 3px solid #ffc107;
+}
+
+.factor-icon {
+    font-size: 1.2em;
+    margin-top: 2px;
+}
+
+.factor-content {
+    flex: 1;
+}
+
+.factor-message {
+    font-weight: 500;
+    color: var(--white, #ffffff);
+    margin-bottom: 4px;
+}
+
+.factor-impact {
+    font-size: 0.9em;
+    color: var(--muted, #888);
+    font-style: italic;
+}
+
+.alert-actions {
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 0.9em;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: var(--white, #ffffff);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-small:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.no-factors {
+    color: var(--muted, #888);
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Color coding for different risk levels */
+.high-risk .risk-badge {
+    background-color: #ff4444 !important;
+}
+
+.medium-risk .risk-badge {
+    background-color: #4444ff !important;
+}
+
+.low-risk .risk-badge {
+    background-color: #44ff44 !important;
+    color: #000 !important;
+}
