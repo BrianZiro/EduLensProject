@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="{% static 'auth/index.css' %}">
     <link rel="icon" href="{% static 'auth/images/EdulensIcon.jpg' %}" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 </head>
 
 <body>
@@ -19,7 +21,7 @@
             <!-- Inline SVG logo -->
             <img src="{% static 'aut/images/EdulensIcon.jpg' %}" alt="" />
             <div class="title">
-                <h1>EduLense AI</h1>
+                <h1>EduLens AI</h1>
                 <p class="tag">AI-guided insights for rural schools</p>
             </div>
         </div>
@@ -51,8 +53,8 @@
         <section id="home" class="page active">
             <div class="hero">
                 <div>
-                    <h2>See. Understand. Improve.</h2>
-                    <p>
+                    <h2 style="font-size: 29px;">Analyze. Predict. Prevent.<i class="bi bi-robot"></i></h2>
+                    <p style="font-size: 25px; color:grey">
                         EduLense AI tracks performance and attendance, analyzes risk
                         factors for dropouts, and surfaces action-ready insights for
                         educators, parents and policymakers.
@@ -69,9 +71,9 @@
                 <div class="hero-card">
                     <h3>Quick snapshot</h3>
                     <ul class="snapshot">
-                        <li><strong id="snap-students">0</strong> students tracked</li>
-                        <li><strong id="snap-at-risk">0</strong> at-risk</li>
-                        <li><strong id="snap-reports">0</strong> reports generated</li>
+                        <li><strong id="snap-students" style="color:greenyellow;font-size: 25px;">0</strong> students tracked</li>
+                        <li><strong id="snap-at-risk" style="color:red;font-size: 25px;">0</strong> at-risk</li>
+                        <li><strong id="snap-reports" style="color:greenyellow;font-size: 25px;">0</strong> reports generated</li>
                     </ul>
                 </div>
             </div>
@@ -127,13 +129,13 @@
                         <div id="subjects-list" class="subjects-grid">
                             <div class="subject-row">
                                 <input class="sub-name" placeholder="Mathematics" />
-                                <input class="sub-score" type="number" min="0" max="100" value="60" />
+                                <input class="sub-score" type="number" min="0" max="100" placeholder="eg.60" />
                                 <button type="button" class="sub-remove">✕</button>
                             </div>
 
                             <div class="subject-row">
                                 <input class="sub-name" placeholder="English" />
-                                <input class="sub-score" type="number" min="0" max="100" value="55" />
+                                <input class="sub-score" type="number" min="0" max="100" placeholder="eg.60"/>
                                 <button type="button" class="sub-remove">✕</button>
 
                             </div>
@@ -159,9 +161,9 @@
 
         <!-- ALERTS -->
         <section id="alerts" class="page">
-            <h2>Alerts</h2>
+            <h2 style="font-size: 27px;">Alerts</h2>
             <div id="alerts-area" class="card">
-                <p>Select a saved student profile (or save one) to see alerts.</p>
+                <p style="font-size: 22px;">Select a saved student profile (or save one) to see alerts.</p>
                 <div id="alerts-output" class="alert-list"></div>
             </div>
         </section>
@@ -172,13 +174,13 @@
             <div class="card" id="report-card">
                 <div id="report-header" class="report-header">
                     <div>
-                        <h3 id="r-name">—</h3>
-                        <p id="r-parents" class="muted">Parents: —</p>
+                        <h3 id="r-name" style="font-size: 20px;color:greenyellow;">—</h3>
+                        <p id="r-parents" class="muted" style="font-size: 20px;color:greenyellow;">Parents: —</p>
                     </div>
                     <div class="report-summary">
-                        <p>Attendance: <strong id="r-attendance">—</strong>/31</p>
-                        <p>Average: <strong id="r-average">—</strong></p>
-                        <p>Dropout risk: <strong id="r-risk">—</strong></p>
+                        <p style="font-size: 20px;">Attendance: <strong id="r-attendance" style="color:greenyellow;font-size: 25px;" >—</strong>/31</p>
+                        <p style="font-size: 20px;">Average: <strong id="r-average" style="color:greenyellow;font-size: 25px;">—</strong>/100%</p>
+                        <p style="font-size: 20px;">Dropout risk: <strong id="r-risk">—</strong></p>
                     </div>
                 </div>
 
@@ -213,24 +215,24 @@
 
         <!-- DASHBOARD -->
         <section id="dashboard" class="page">
-            <h2>Dashboard</h2>
+            <h2 style="font-size: 27px;">Dashboard</h2>
             <div class="grid-3">
                 <div class="card stat-card">
-                    <h4>Total students</h4>
-                    <p class="stat" id="dash-students">0</p>
+                    <h4 style="font-size: 23px;">Total students</h4>
+                    <p class="stat" id="dash-students" style="color:greenyellow;font-size: 25px;">0</p>
                 </div>
                 <div class="card stat-card">
-                    <h4>At risk students</h4>
-                    <p class="stat" id="dash-risk">0</p>
+                    <h4 style="font-size: 23px;">At risk students</h4>
+                    <p class="stat" id="dash-risk" style="color:red;font-size: 25px;">0</p>
                 </div>
                 <div class="card stat-card">
-                    <h4>Reports generated</h4>
-                    <p class="stat" id="dash-reports">0</p>
+                    <h4 style="font-size: 23px;">Reports generated</h4>
+                    <p class="stat" id="dash-reports" style="color:greenyellow;font-size: 25px;">0</p>
                 </div>
             </div>
 
             <div class="card chart-card">
-                <h3>Performance distribution</h3>
+                <h3 style="font-size: 25px;">Performance distribution</h3>
                 <canvas id="perfChart" width="600" height="160" aria-label="Performance chart"></canvas>
                 <p class="muted small">
                     Simple averaged performance per student (demo).

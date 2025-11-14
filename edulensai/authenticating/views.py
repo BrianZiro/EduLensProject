@@ -67,7 +67,7 @@ def profile(request):
     }
     return render(request, 'auth/profile.html', context=context)
 
-           
+        
 def student_prediction(request):
     if request.method == "POST":
         try:

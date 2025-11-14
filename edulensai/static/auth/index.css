@@ -103,16 +103,23 @@ body {
     border-radius: 10px;
     flex-shrink: 0
 }
+.bi-robot {
+  font-size: 40px;
+  color: #00bfff; /* light blue */
+}
+
 
 .title h1 {
     margin: 0;
-    font-size: 18px;
-    letter-spacing: 0.2px
+    font-size: 35px;
+    letter-spacing: 0.2px;
+    color: greenyellow;
+
 }
 
 .tag {
     margin: 0;
-    font-size: 12px;
+    font-size: 15px;
     color: var(--muted)
 }
 
@@ -123,16 +130,28 @@ body {
 }
 
 .nav-link {
-    color: var(--grey);
+    /* color: var(--grey); */
+    color:white;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 18px;
     padding: 8px 10px;
-    border-radius: 8px
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .nav-link:hover {
-    background: var(--glass);
-    color: var(--white)
+    background: rgba(108, 210, 241, 0.952); 
+    color: #e0f7ff;
+    transform: scale(1.1); 
+    box-shadow: 0 0 12px rgba(173, 216, 230, 0.6);
+}
+/* Active (clicked/current page) link */
+.nav-link.active {
+  background: rgba(108, 210, 241, 0.952); 
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(173, 216, 230, 0.8);
+  transform: scale(1.05); /* small highlight */
 }
 nav .bi {
       display: none;
@@ -233,13 +252,24 @@ nav .bi {
 }
 
 .btn {
-    background: linear-gradient(90deg, var(--dark-blue), var(--accent));
+    /* background: linear-gradient(90deg, var(--dark-blue), var(--accent)); */
+    background:rgba(172, 255, 47, 0.658);
     border: none;
-    padding: 10px 16px;
+    padding: 20px 10px;
     border-radius: 10px;
-    color: white;
+    color: black;
     font-weight: 600;
-    cursor: pointer
+    font-size: 23px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+   
+}
+.btn:hover{
+    background: rgb(133, 203, 226);
+    color: #e0f7ff;
+    transition: (1.1);
+    box-shadow: 0 0 12px rgba(162, 230, 253, 0.993);
 }
 
 .btn-small {
@@ -248,13 +278,23 @@ nav .bi {
 }
 
 .btn-outline {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    color: var(--white);
-    padding: 10px 16px;
-    border-radius: 10px
+    background:rgba(172, 255, 47, 0.658);
+    border: none;
+    padding: 20px 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: 600;
+    font-size: 23px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
-
+.btn-outline:hover{
+    background: rgb(133, 203, 226);
+    color: #e0f7ff;
+    transition: (1.1);
+    box-shadow: 0 0 12px rgba(162, 230, 253, 0.993);
+}
 .container {
     max-width: 1100px;
     margin: 24px auto;
@@ -353,7 +393,8 @@ nav .bi {
     list-style: none;
     padding: 6px;
     margin: 6px 0 0;
-    color: var(--muted)
+    color: rgb(194, 178, 178);
+    font-size: 18px;
 }
 
 .snapshot li {
@@ -388,7 +429,8 @@ h2 {
 }
 
 .form-grid label {
-    display: block
+    display: block;
+    font-size: 20px;
 }
 
 .form-full {
@@ -406,29 +448,35 @@ input[type="text"],
 input[type="number"],
 select {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    background: transparent;
-    color: var(--white)
+    border: 1px solid rgba(137, 231, 118, 0.06);
+    /* background: rgb(255, 255, 255); */
+    background-color: #070707;
+    color:rgb(202, 191, 191);
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .attendance-control {
     display: flex;
     align-items: center;
-    gap: 8px
+    gap: 8px;
+    
 }
 
 .att-btn {
     width: 36px;
     height: 36px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.03);
+    background-color: greenyellow;
     border: none;
-    color: var(--white);
-    font-size: 18px;
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
     cursor: pointer
 }
+
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -449,7 +497,13 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .sub-name {
-    flex: 1
+    flex: 1;
+    padding:15px;
+    border-radius: 10px;
+     background: rgb(10, 10, 10);
+    color:grey;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .sub-score {
@@ -482,7 +536,9 @@ input[type="number"]::-webkit-inner-spin-button {
 .report-table td {
     padding: 8px;
     border-bottom: 1px dashed rgba(255, 255, 255, 0.03);
-    text-align: left
+    text-align: left;
+    font-size: 20px;
+
 }
 
 .report-actions {
@@ -539,7 +595,8 @@ footer.footer {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 12px
+    margin-top: 12px;
+    font-size: 22px;
 }
 
 .alert {
