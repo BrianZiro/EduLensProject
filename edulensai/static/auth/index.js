@@ -148,7 +148,8 @@ function analyzeRiskFactors(profile, avgScore, aiPrediction) {
             type: 'parental',
             severity: 'warning',
             message: 'Low parental involvement',
-            impact: 'Limited support system at home'
+            impact: 'Limited support system at home',
+            recommendation:'Taking action by visiting the parent'
         });
     }
     
@@ -214,6 +215,15 @@ async function showAlerts() {
         const alertDiv = createAlertCard(profile, riskAnalysis);
         alertsOutput.appendChild(alertDiv);
     });
+    // Update the dashboard after analyzing risk
+const dashRisk = document.getElementById('dash-risk');
+const snapAtRisk = document.getElementById('snap-at-risk');
+
+const atRiskCount = alerts.filter(a => a.riskAnalysis.riskLabel !== 'Low').length;
+
+if (dashRisk) dashRisk.textContent = atRiskCount;
+if (snapAtRisk) snapAtRisk.textContent = atRiskCount;
+
 }
 // Function to create individual alert cards
 function createAlertCard(profile, riskAnalysis) {
@@ -402,6 +412,8 @@ function updateDashboardAndSnapshots() {
     if (dashStudents) dashStudents.textContent = arr.length;
     if (dashRisk) dashRisk.textContent = '0'; // Will be updated by alerts
     if (dashReports) dashReports.textContent = reportsCount;
+    if (window.updateDashboardChart) window.updateDashboardChart();
+
 }
 
 // Page navigation function
@@ -542,6 +554,47 @@ document.addEventListener('DOMContentLoaded', function() {
     if (goDashboard) {
         goDashboard.addEventListener('click', () => showPage('dashboard'));
     }
+    // === Initialize Performance Chart ===
+const perfCanvas = document.getElementById('perfChart');
+if (perfCanvas) {
+    const ctx = perfCanvas.getContext('2d');
+
+    function drawPerfChart() {
+        const raw = localStorage.getItem('edu_profiles');
+        const arr = raw ? JSON.parse(raw) : [];
+
+        const averages = arr.map(p => {
+            if (!p.subjects || p.subjects.length === 0) return 0;
+            const total = p.subjects.reduce((sum, s) => sum + Number(s.score || 0), 0);
+            return Math.round(total / p.subjects.length);
+        });
+
+        // If no data, draw empty chart
+        if (averages.length === 0) {
+            ctx.clearRect(0, 0, perfCanvas.width, perfCanvas.height);
+            return;
+        }
+
+        // Draw simple bar chart
+        const width = 40;
+        const gap = 20;
+        ctx.clearRect(0, 0, perfCanvas.width, perfCanvas.height);
+
+        averages.forEach((avg, i) => {
+            const x = i * (width + gap);
+            const height = (avg / 100) * 140;
+
+            ctx.fillStyle = "lightgreen";
+            ctx.fillRect(x, 150 - height, width, height);
+        });
+    }
+
+    drawPerfChart();
+
+    // Redraw whenever data updates
+    window.updateDashboardChart = drawPerfChart;
+}
+
     
     // Initialize dashboard
     updateDashboardAndSnapshots();
